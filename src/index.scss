@@ -1,0 +1,100 @@
+@import 'bulma/bulma.sass';
+
+html, body {
+  background-color: #e6ecef;
+  .greeting {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 100;
+    margin-top: 10rem;
+    span {
+      font-weight: bold;
+    }
+  }
+  nav {
+    margin-bottom: 3rem;
+    .navbar-menu {
+      .navbar-end {
+        .navbar-item {
+          .buttons {
+            a {
+              border-radius: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .not-found {
+    font-size: 5rem;
+    margin-top: 10rem;
+    color: #e75a24eb;
+  }
+
+  .unsorted-tag {
+    position: absolute;
+    left: 18rem;
+    color: white;
+    width: 6rem;
+    text-align: center;
+    font-weight: bold;
+    background: hsl(348, 100%, 61%);
+  }
+
+  .select-form {
+    width: 40%;
+    margin: auto;
+    label {
+      font-weight: 100;
+      font-size: 2rem;
+      display: block;
+      width: 50rem;
+    }
+    input {
+      margin: 1rem 0;
+      border-radius: 0px;
+      outline: none;
+      padding: 1.5rem;
+      &:focus {
+        outline: none !important;
+      }
+    }
+    button {
+      border-radius: 0px;
+    }
+  }
+
+  .tabs {
+    .is-active {
+      border-bottom: 2px solid #00d1b2;
+    }
+    li:last-child {
+      margin-left: 10rem;
+      a {
+        border-radius: 0px;
+      }
+    }
+  }
+
+  table {
+    width: 45%;
+    margin-bottom: 2rem;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border: none;
+    color: gray;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
