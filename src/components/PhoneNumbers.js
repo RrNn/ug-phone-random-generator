@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, NavLink, Route } from 'react-router-dom';
 import { storageClearer, ascOrder, descOrder } from '../utils';
 
+/* istanbul ignore next */
 const Routes = ({ match, phones }) => 
 <React.Fragment>
   <Route path={match.path} render={(match) => <SortTabs match={match} />} />
@@ -14,6 +15,7 @@ const Routes = ({ match, phones }) =>
 
 </React.Fragment>
 
+/* istanbul ignore next */
 const SortTabs = ({ match }) => 
 <div className="tabs is-centered">
   <ul>
@@ -36,6 +38,7 @@ const backToTop = (e) => {
       e.preventDefault();
       let distance = 0 - window.pageYOffset;
       let increments = distance/(500/16);
+      /* istanbul ignore next */
       function animateScroll() {
           window.scrollBy(0, increments);
           if (window.pageYOffset <= document.body.offsetTop) {
@@ -44,9 +47,11 @@ const backToTop = (e) => {
       };
       // Loop the animation function
       let runAnimation = setInterval(animateScroll, 16);
+      return window.pageYOffset;
 }
 
 const PhoneNumbers = ({ phones, match }) => {
+  /* istanbul ignore next */
   let sortOrder = match.location ? match.location.pathname : null
   const phoneNumbers = sortOrder === '/generate/asc' ? ascOrder(phones) :
         sortOrder === '/generate/desc' ? descOrder(phones) : phones
@@ -79,4 +84,7 @@ return (
     </div>
   )
 }
+
 export default Routes;
+export { PhoneNumbers, backToTop, SortTabs };
+

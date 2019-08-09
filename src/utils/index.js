@@ -3,6 +3,7 @@ export function randomNumberGenerator(num) {
 
   while (numbers.length < num) {
     let randNum = Math.random().toString().substring(2,10)
+    /* istanbul ignore next */
     if (numbers.includes(`07${randNum}`)) {
       continue;
     } else {
@@ -12,12 +13,14 @@ export function randomNumberGenerator(num) {
   return numbers;
 }
 
+/* istanbul ignore next */
 export const storageClearer = () => localStorage.removeItem('phones');
 
 export const ascOrder = numArr =>  (numArr.map(num=>parseInt(num))).sort().map(num=>'0'+num);
 
 export const descOrder = numArr => ascOrder(numArr).reverse();
 
+/* istanbul ignore next */
 export function downloadCsv() {
     const data = JSON.parse(localStorage.getItem('phones'));
 
@@ -40,7 +43,7 @@ export function downloadCsv() {
     hiddenElement.download = 'phonenumbers.csv';
     hiddenElement.click();
 }
-
+/* istanbul ignore next */
 export const greetUser = () => { 
   const start = 0 * 0, startEnd = 6 * 60, morningEnd = 12 * 60, afternoonEnd = 16 * 60,
   eveningEnd = 21 * 60, nightEnd = 23 * 60, date = new Date(), now = date.getHours() * 60;
