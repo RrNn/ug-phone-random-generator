@@ -7,7 +7,6 @@ import {
   greetUser
 } from '../utils';
 
-
 describe('util function',()=>{
   it('generates a given number of random 10 digit numbers and returns an array of those',() => {
       const phoneNumbers = randomNumberGenerator(15);
@@ -24,4 +23,13 @@ describe('util function',()=>{
     const descSorted = descOrder(numbers);
     expect(descSorted).toEqual(['0779954066', '0704367965', '0700000000'])
   })
+  it('returns the early morning user greeting',() => {
+    let dateToUse = new Date('Sat Aug 10 2019 07:50')
+    global.Date = jest.fn(()=>dateToUse);
+    expect(greetUser()).toBe('Good morning, start by clicking "Generate Phone numbers"')
+  })
 })
+
+
+
+

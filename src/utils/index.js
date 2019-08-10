@@ -45,10 +45,10 @@ export function downloadCsv() {
 }
 /* istanbul ignore next */
 export const greetUser = () => { 
-  const start = 0 * 0, startEnd = 6 * 60, morningEnd = 12 * 60, afternoonEnd = 16 * 60,
-  eveningEnd = 21 * 60, nightEnd = 23 * 60, date = new Date(), now = date.getHours() * 60;
+  const start = 0, startEnd = 5, morningEnd = 11, afternoonEnd = 15,
+  eveningEnd = 23, date = new Date(), now = date.getHours();
 
-  return start < now && now < startEnd ?
+  return start < now && now <= startEnd ?
   `Hey! good morning, it's so early. Just start by clicking "Generate Phone numbers"` :
   startEnd < now && now <= morningEnd ?
   `Good morning, start by clicking "Generate Phone numbers"` :
@@ -56,8 +56,7 @@ export const greetUser = () => {
   `Good afternoon, start by clicking "Generate Phone numbers"` :
   afternoonEnd < now && now <= eveningEnd ?
   `Good evening, start by clicking "Generate Phone numbers"` :
-  eveningEnd < now && now <= nightEnd ? 
-  `Time to be sleeping, start by clicking "Generate Phone numbers"` : null
+  `Time to be sleeping, start by clicking "Generate Phone numbers"`
 }
 
 
