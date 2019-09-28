@@ -35,7 +35,7 @@ class Generator extends Component {
             }}
          />
          <button className="button is-primary is-large is-fullwidth">
-          { this.state.generating ? 'Generating...' : 'Generate Numbers' }
+          Generate Numbers
          </button>
         </form> :
         <PhoneNumbers phones={phones} match={this.props.match}/>
